@@ -1,7 +1,11 @@
+import { AboutUs } from "./aboutUs";
+import { Footer } from "./footer";
+
 export default function Home() {
   return (
     <main>
-      <h1 className="text-center">Hello world</h1>
+      <AboutUs />
+      <Footer />
     </main>
   );
 }
