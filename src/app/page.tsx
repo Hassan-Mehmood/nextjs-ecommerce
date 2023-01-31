@@ -1,6 +1,6 @@
+import { AboutUs } from './aboutUs';
+import { Footer } from './footer';
 import MainSection from './MainSection';
-import { AboutUs } from "./aboutUs";
-import { Footer } from "./footer";
 
 export default function Home() {
   return (
