@@ -1,9 +1,13 @@
 import MainSection from './MainSection';
+import { AboutUs } from "./aboutUs";
+import { Footer } from "./footer";
 
 export default function Home() {
   return (
-    <main className="px-2 mx-auto">
+    <main>
       <MainSection />
+      <AboutUs />
+      <Footer />
     </main>
   );
 }
