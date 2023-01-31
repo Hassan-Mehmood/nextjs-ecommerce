@@ -7,6 +7,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { GrClose } from 'react-icons/gr';
 import { Lato } from '@next/font/google';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const lato = Lato({
   subsets: [],
@@ -17,13 +18,13 @@ const Navbar = () => {
   const [showNavbarMenu, setShowNavbarMenu] = useState(false);
 
   return (
-    <nav className="flex justify-center items-center relative mx-auto px-5 navBreak:px-1 min-h-[60px] max-w-7xl">
-      <div className="flex flex-1 text-xs">
+    <nav className="flex justify-center items-center fixed left-0 right-0 z-10 navBreak:static mx-auto px-5 navBreak:px-1 min-h-[60px] xl:max-w-[90%]  bg-white ">
+      <div className="flex flex-1 text-xs ">
         <ul
           className={
             showNavbarMenu === false
               ? `hidden navBreak:flex flex-wrap ${lato.className}`
-              : `absolute left-0 px-5 top-16 right-0 border border-t-black border-b-0 border-l-0 border-r-0 navBreak:flex navBreak:static navBreak:border-none flex-wrap ${lato.className}`
+              : `absolute left-0 px-5 top-14 right-0 border border-t-black border-b-0 border-l-0 border-r-0 navBreak:flex navBreak:static navBreak:border-none flex-wrap bg-white ${lato.className}`
           }
         >
           <li className="navbar__navLink">
@@ -60,8 +61,15 @@ const Navbar = () => {
         </div>
         <BsSuitHeart className="cursor-pointer navBreak:hidden" size={24} />
       </div>
-      <div className="text-center mx-8">
-        <h1 className="text-xl cursor-pointer">BOHEMIAN TRADERS</h1>
+      <div className="mx-8">
+        <Image
+          src="/logo.webp"
+          alt=""
+          width="0"
+          height="0"
+          sizes="50vw"
+          className="w-full h-auto max-h-[24px] cursor-pointer"
+        />
       </div>
       <div className="flex flex-1 justify-end">
         <CgProfile size={24} className="mr-2 cursor-pointer" />
