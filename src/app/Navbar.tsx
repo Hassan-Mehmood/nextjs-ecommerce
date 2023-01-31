@@ -18,7 +18,7 @@ const Navbar = () => {
   const [showNavbarMenu, setShowNavbarMenu] = useState(false);
 
   return (
-    <nav className="flex justify-center items-center relative mx-auto px-5 navBreak:px-1 min-h-[60px] xl:max-w-[90%]  bg-white ">
+    <nav className="flex justify-center items-center fixed left-0 right-0 z-10 navBreak:static mx-auto px-5 navBreak:px-1 min-h-[60px] xl:max-w-[90%]  bg-white ">
       <div className="flex flex-1 text-xs ">
         <ul
           className={
