@@ -1,5 +1,6 @@
-import { AboutUs } from './aboutUs';
-import { Footer } from './footer';
+import { AboutUs } from './AboutUs';
+import { Footer } from './Footer';
+import { ImageSlide } from './ImageSlide';
 import MainSection from './MainSection';
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <MainSection />
       <AboutUs />
+      <ImageSlide/>
       <Footer />
     </main>
   );
