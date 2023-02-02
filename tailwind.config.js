@@ -18,9 +18,14 @@ module.exports = {
       },
       width: {
         cardWidth: '1070px',
+        100: "349px"
+
       }, height: {
         cardHeight: '620px'
-      }
+      },
+      minHeight: {
+        800: "300px"
+      },
     },
   },
   plugins: [],

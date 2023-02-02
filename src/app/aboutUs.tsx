@@ -3,11 +3,11 @@ import React from "react";
 export const AboutUs = () => {
   return (
     <div className="tracking-widest mx-5 md:flex md:mx-20 my-20 px-20 py-14 bg-lightOrange text-center md:text-left">
-      <h1 className="text-3xl font-light md:w-52 md:mr-36">
+      <h1 className="text-3xl font-light mb-8 md:mb-0 md:w-52 md:mr-20">
         MADE FOR THE MODERN <br />
         BOHEMIAN
       </h1>
-      <div className="">
+      <div>
         <p className="text-sm font-semibold tracking-wider">
           We blend classic, fashion forward pieces including elevated basics
           with bohemian detailing. Since our inception, our aim has been to
