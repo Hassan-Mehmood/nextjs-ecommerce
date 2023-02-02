@@ -45,7 +45,7 @@ export const ImageSlide = () => {
                   alt="model1"
                   width={0}
                   height={0}
-                  className="w-full md:w-100 md:min-h-800 lg:min-h-0 lg:w-full"
+                  className="w-full md:w-349 md:min-h-300 lg:min-h-0 lg:w-full"
                   sizes="100vw"
                 />
                 <div className="text-center px-3 flex items-center flex-col mt-4 lg:px-20 md:mt-0 lg:w-cardWidth">
