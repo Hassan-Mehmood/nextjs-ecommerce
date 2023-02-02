@@ -32,12 +32,18 @@ const products = [
 
 const Product = () => {
   return (
-    <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-14 mx-auto max-w-5xl items-center">
+    <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-8 mx-auto max-w-5xl items-center">
       {products.map((product) => (
-        // <div key={product.img} className="relative w-full h-auto">
         <div key={product.img} className="px-4 my-4">
-          {/* <Image src={product.img} alt="" fill /> */}
-          <img src={product.img} alt="" className="object-cover" />
+          <Image
+            src={product.img}
+            alt=""
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-full h-auto"
+          />
+          {/* <img src={product.img} alt="" className="object-cover" /> */}
           <p className={`${work_sans.className} text-xs tracking-widest leading-5 mb-4`}>
             {product.text}
           </p>
