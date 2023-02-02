@@ -1,6 +1,6 @@
-import { AboutUs } from './aboutUs';
-import { Footer } from './footer';
-import MainSection from './MainSection';
+import { AboutUs } from './components/AboutUs';
+import { Footer } from './components/Footer';
+import MainSection from './components/MainSection';
 
 export default function Home() {
   return (
