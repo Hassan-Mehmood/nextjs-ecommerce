@@ -1,6 +1,9 @@
 'use client';
 import Image from 'next/image';
 import { Work_Sans } from '@next/font/google';
+import { RiTruckFill } from 'react-icons/ri';
+import { AiOutlineClose } from 'react-icons/ai';
+import { BsFillCreditCard2BackFill } from 'react-icons/bs';
 import { useState } from 'react';
 
 const work_sans = Work_Sans({
@@ -67,18 +70,70 @@ const Product = () => {
       {showProductDescription ? (
         <>
           <div className="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-80" />
-          <div className="bg-white block fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-full max-h-[571px] max-w-[1280px] border overflow-hidden">
-            <div className="flex">
-              <section className="flex h-full">
-                <div className="w-[300px] h-full relative">
-                  <Image src="/modalPic1.jpg" alt="" fill className="object-contain w-full" />
+          <div className="bg-white block fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-full max-h-[571px] max-w-[1280px] border overflow-scroll">
+            <div className="flex justify-around items-center w-full h-full">
+              <section className="w-1/2 flex justify-around h-full">
+                <div className="w-72 h-full min-h-[420px] relative">
+                  <Image
+                    src="/modalPic1.jpg"
+                    alt=""
+                    fill
+                    className="object-contain w-full h-auto"
+                  />
                 </div>
-                <div className="w-[300px] h-full relative">
-                  <Image src="/modalPic.jpg" alt="" fill className="object-contain w-full" />
+                <div className="w-72 h-full min-h-[420px] relative">
+                  <Image src="/modalPic.jpg" alt="" fill className="object-contain w-full h-auto" />
                 </div>
               </section>
-              <section className="">
-                <h1>hello</h1>
+              <section className="w-1/2 max-w-[416px] h-full mx-auto ">
+                <div
+                  className="absolute right-4 top-4 cursor-pointer"
+                  onClick={() => setShowProductDescription(false)}
+                >
+                  <AiOutlineClose size={24} />
+                </div>
+                <div className="flex flex-col justify-evenly h-full">
+                  <div>
+                    <h4 className={`text-3xl mb-2`}>High Waisted Wide Leg Pant</h4>
+                    <h5 className="mb-3 tracking-widest opacity-50">Bohemian Traders</h5>
+                    <p className="tracking-widest">$199</p>
+                  </div>
+                  <div>
+                    {/* <div className="relative w-[8%]" data-value="1">
+                      <div className="absolute w-9 h-9 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border cursor-pointer">
+                        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                          S
+                        </span>
+                      </div>
+                    </div>
+                    <div className="relative w-[8%]" data-value="1">
+                      <div className="absolute w-9 h-9 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border cursor-pointer">
+                        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                          M
+                        </span>
+                      </div>
+                    </div> */}
+                  </div>
+                  <div>
+                    <button className="w-full bg-slate-900 text-white py-3 opacity-90">
+                      Add to cart
+                    </button>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="flex items-center">
+                      <BsFillCreditCard2BackFill size={32} />
+                      <p className={`text-[10px] ml-3 ${work_sans.className}`}>
+                        SHOP NOW, PAY LATER WITH AFTERPAY & ZIP
+                      </p>
+                    </div>
+                    <div className="flex items-center ml-4">
+                      <RiTruckFill size={32} />
+                      <p className={`text-[10px] ml-3 ${work_sans.className}`}>
+                        FREE SHIPPING ON AU ORDERS OVER $250
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </section>
             </div>
           </div>
