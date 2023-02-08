@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Work_Sans } from '@next/font/google';
 import { RiTruckFill } from 'react-icons/ri';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
 import { useState } from 'react';
 
@@ -35,8 +35,11 @@ const products = [
   },
 ];
 
+const productImages = ['/modalPic.jpg', '/modalPic1.jpg'];
+
 const Product = () => {
   const [showProductDescription, setShowProductDescription] = useState(false);
+  const [currentCarousel, setCurrentCarousel] = useState(0);
 
   return (
     <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-8 mx-auto max-w-7xl items-center">
@@ -69,11 +72,11 @@ const Product = () => {
 
       {showProductDescription ? (
         <>
-          <div className="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-80" />
-          <div className="bg-white block fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-full max-h-[571px] max-w-[1280px] border overflow-scroll">
-            <div className="flex justify-around items-center w-full h-full">
-              <section className="w-1/2 flex justify-around h-full">
-                <div className="w-72 h-full min-h-[420px] relative">
+          <div className="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-80 z-40" />
+          <div className="bg-white block fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-full max-h-[571px] max-w-[1280px] border overflow-scroll z-40">
+            <div className="flex flex-col md:flex-row justify-around items-center py-12">
+              <section className="w-full flex order-1 justify-around ">
+                <div className="w-72 hidden h-full min-h-[420px] relative">
                   <Image
                     src="/modalPic1.jpg"
                     alt=""
@@ -81,45 +84,72 @@ const Product = () => {
                     className="object-contain w-full h-auto"
                   />
                 </div>
-                <div className="w-72 h-full min-h-[420px] relative">
+                <div className="w-72 hidden h-full min-h-[420px] relative">
                   <Image src="/modalPic.jpg" alt="" fill className="object-contain w-full h-auto" />
                 </div>
+
+                <div className="relative flex">
+                  {currentCarousel <= 0 ? (
+                    <button className="absolute top-0 bottom-0 m-auto" disabled>
+                      <AiOutlineArrowLeft />
+                    </button>
+                  ) : (
+                    <button
+                      className="absolute top-0 bottom-0 m-auto"
+                      onClick={() => {
+                        setCurrentCarousel((current) => --current);
+                      }}
+                    >
+                      <AiOutlineArrowLeft />
+                    </button>
+                  )}
+
+                  <Image
+                    src={productImages[currentCarousel]}
+                    alt="productImage"
+                    width="0"
+                    height="0"
+                    sizes="120vw"
+                    className="w-full h-auto mt-20 lg:mt-0"
+                  />
+
+                  {currentCarousel >= productImages.length - 1 ? (
+                    <button disabled className="absolute top-0 bottom-0  right-0 m-auto">
+                      <AiOutlineArrowRight />
+                    </button>
+                  ) : (
+                    <button
+                      className="absolute top-0 bottom-0 right-0 m-auto"
+                      onClick={() => {
+                        setCurrentCarousel((current) => ++current);
+                      }}
+                    >
+                      <AiOutlineArrowRight />
+                    </button>
+                  )}
+                </div>
               </section>
-              <section className="w-1/2 max-w-[416px] h-full mx-auto ">
+              <section className="px-4 ">
+                {/* md:w-1/2  md:max-w-[416px] md:h-full mx-auto  */}
                 <div
                   className="absolute right-4 top-4 cursor-pointer"
                   onClick={() => setShowProductDescription(false)}
                 >
                   <AiOutlineClose size={24} />
                 </div>
-                <div className="flex flex-col justify-evenly h-full">
-                  <div>
+                <div className="md:h-full">
+                  {/* flex flex-col justify-evenly */}
+                  <div className="mb-4">
                     <h4 className={`text-3xl mb-2`}>High Waisted Wide Leg Pant</h4>
                     <h5 className="mb-3 tracking-widest opacity-50">Bohemian Traders</h5>
                     <p className="tracking-widest">$199</p>
-                  </div>
-                  <div>
-                    {/* <div className="relative w-[8%]" data-value="1">
-                      <div className="absolute w-9 h-9 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border cursor-pointer">
-                        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                          S
-                        </span>
-                      </div>
-                    </div>
-                    <div className="relative w-[8%]" data-value="1">
-                      <div className="absolute w-9 h-9 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border cursor-pointer">
-                        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                          M
-                        </span>
-                      </div>
-                    </div> */}
                   </div>
                   <div>
                     <button className="w-full bg-slate-900 text-white py-3 opacity-90">
                       Add to cart
                     </button>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center mt-4">
                     <div className="flex items-center">
                       <BsFillCreditCard2BackFill size={32} />
                       <p className={`text-[10px] ml-3 ${work_sans.className}`}>
