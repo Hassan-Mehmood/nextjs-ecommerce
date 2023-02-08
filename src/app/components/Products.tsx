@@ -39,7 +39,7 @@ const productImages = ['/modalPic.jpg', '/modalPic1.jpg'];
 
 const Product = () => {
   const [showProductDescription, setShowProductDescription] = useState(false);
-  const [currentCarousel, setCurrentCarousel] = useState(0);
+  const [productImageNumber, setProductImageNumber] = useState(0);
 
   return (
     <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-8 mx-auto max-w-7xl items-center">
@@ -73,10 +73,10 @@ const Product = () => {
       {showProductDescription ? (
         <>
           <div className="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-80 z-40" />
-          <div className="bg-white block fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-full max-h-[571px] max-w-[1280px] border overflow-scroll z-40">
-            <div className="flex flex-col md:flex-row justify-around items-center py-12">
-              <section className="w-full flex order-1 justify-around ">
-                <div className="w-72 hidden h-full min-h-[420px] relative">
+          <div className="bg-white fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90%] h-full max-h-[571px] max-w-[1280px] border overflow-scroll z-40">
+            <div className="flex flex-col lg:flex-row justify-around items-center lg:h-full py-12 md:py-4">
+              <section className="max-w-[665px] flex order-1 sm:order-1 justify-around px-4 mx-auto ">
+                <div className="w-72 hidden sm:block h-full min-h-[420px] relative">
                   <Image
                     src="/modalPic1.jpg"
                     alt=""
@@ -84,52 +84,40 @@ const Product = () => {
                     className="object-contain w-full h-auto"
                   />
                 </div>
-                <div className="w-72 hidden h-full min-h-[420px] relative">
+                <div className="w-72 hidden sm:block h-full min-h-[420px] relative">
                   <Image src="/modalPic.jpg" alt="" fill className="object-contain w-full h-auto" />
                 </div>
 
-                <div className="relative flex">
-                  {currentCarousel <= 0 ? (
-                    <button className="absolute top-0 bottom-0 m-auto" disabled>
-                      <AiOutlineArrowLeft />
-                    </button>
-                  ) : (
-                    <button
-                      className="absolute top-0 bottom-0 m-auto"
-                      onClick={() => {
-                        setCurrentCarousel((current) => --current);
-                      }}
-                    >
-                      <AiOutlineArrowLeft />
-                    </button>
-                  )}
-
+                <div className="flex relative sm:hidden">
+                  <button
+                    className="absolute top-0 bottom-0 m-auto"
+                    disabled={productImageNumber <= 0}
+                    onClick={() => {
+                      setProductImageNumber((current) => --current);
+                    }}
+                  >
+                    <AiOutlineArrowLeft size={24} />
+                  </button>
                   <Image
-                    src={productImages[currentCarousel]}
+                    src={productImages[productImageNumber]}
                     alt="productImage"
                     width="0"
                     height="0"
                     sizes="120vw"
-                    className="w-full h-auto mt-20 lg:mt-0"
+                    className="w-full h-auto mt-20 md:mt-8 lg:mt-0"
                   />
-
-                  {currentCarousel >= productImages.length - 1 ? (
-                    <button disabled className="absolute top-0 bottom-0  right-0 m-auto">
-                      <AiOutlineArrowRight />
-                    </button>
-                  ) : (
-                    <button
-                      className="absolute top-0 bottom-0 right-0 m-auto"
-                      onClick={() => {
-                        setCurrentCarousel((current) => ++current);
-                      }}
-                    >
-                      <AiOutlineArrowRight />
-                    </button>
-                  )}
+                  <button
+                    className="absolute top-0 bottom-0 right-0 m-auto"
+                    disabled={productImageNumber >= productImages.length - 1}
+                    onClick={() => {
+                      setProductImageNumber((current) => ++current);
+                    }}
+                  >
+                    <AiOutlineArrowRight size={24} />
+                  </button>
                 </div>
               </section>
-              <section className="px-4 ">
+              <section className="sm:order-2 px-4 sm:mt-4">
                 {/* md:w-1/2  md:max-w-[416px] md:h-full mx-auto  */}
                 <div
                   className="absolute right-4 top-4 cursor-pointer"
