@@ -16,6 +16,16 @@ module.exports = {
         xl: '1280px',
         '2xl': '1536px',
       },
+      width: {
+        cardWidth: '1070px',
+        349: "349px"
+
+      }, height: {
+        cardHeight: '620px'
+      },
+      minHeight: {
+        300: "300px"
+      },
     },
   },
   plugins: [],
