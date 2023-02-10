@@ -92,7 +92,7 @@ export const RefineSpec = () => {
         </div>
         {priceSection && (
           <div className="flex flex-col space-y-2 py-4 px-4 border-x border-black lg:border-x-0 lg:px-0">
-            <input type={'number'} placeholder="Min." className="text-sm outline-none" />
+            <input type={'number'} min={0} placeholder="Min." className="text-sm outline-none" />
             <input type={'number'} placeholder="Max." className="text-sm outline-none" />
             <button className="text-sm ">UPDATE</button>
           </div>
