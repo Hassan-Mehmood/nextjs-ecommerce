@@ -71,14 +71,14 @@ const Product = () => {
         </div>
       ))}
 
-      {showProductDescription
-        ? ProductModal({
-            productImageNumber,
-            setProductImageNumber,
-            showProductDescription,
-            setShowProductDescription,
-          })
-        : null}
+      {showProductDescription ? (
+        <ProductModal
+          productImageNumber={productImageNumber}
+          setProductImageNumber={setProductImageNumber}
+          showProductDescription={showProductDescription}
+          setShowProductDescription={setShowProductDescription}
+        />
+      ) : null}
     </section>
   );
 };
