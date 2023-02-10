@@ -1,5 +1,11 @@
+'use client';
 import Image from 'next/image';
 import { Work_Sans } from '@next/font/google';
+import { RiTruckFill } from 'react-icons/ri';
+import { AiOutlineClose, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { BsFillCreditCard2BackFill } from 'react-icons/bs';
+import { Dispatch, SetStateAction, useState } from 'react';
+import ProductModal from './ProductModal';
 
 const work_sans = Work_Sans({
   subsets: [],
@@ -31,25 +37,48 @@ const products = [
 ];
 
 const Product = () => {
+  const [showProductDescription, setShowProductDescription] = useState(false);
+  const [productImageNumber, setProductImageNumber] = useState(0);
+
   return (
-    <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-8 mx-auto max-w-5xl items-center">
+    <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-8 mx-auto max-w-7xl items-center">
       {products.map((product) => (
         <div key={product.img} className="px-4 my-4">
-          <Image
-            src={product.img}
-            alt=""
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="w-full h-auto"
-          />
-          {/* <img src={product.img} alt="" className="object-cover" /> */}
-          <p className={`${work_sans.className} text-xs tracking-widest leading-5 mb-4`}>
+          <div className="group relative">
+            <div className="absolute flex justify-center items-center w-full h-full opacity-0 group-hover:opacity-100 transition-opacity ">
+              <button
+                className="bg-white px-4 py-2 border"
+                onClick={() => setShowProductDescription(true)}
+              >
+                Quick View
+              </button>
+            </div>
+            <Image
+              src={product.img}
+              alt=""
+              width="0"
+              height="0"
+              sizes="100vw"
+              className="w-full h-auto"
+            />
+          </div>
+          <p
+            className={`${work_sans.className} text-xs lg:text-base tracking-widest leading-5 mb-4`}
+          >
             {product.text}
           </p>
-          <p className={`${work_sans.className} text-xs`}>${product.price}</p>
+          <p className={`${work_sans.className} text-xs lg:text-base`}>${product.price}</p>
         </div>
       ))}
+
+      {showProductDescription ? (
+        <ProductModal
+          productImageNumber={productImageNumber}
+          setProductImageNumber={setProductImageNumber}
+          showProductDescription={showProductDescription}
+          setShowProductDescription={setShowProductDescription}
+        />
+      ) : null}
     </section>
   );
 };
