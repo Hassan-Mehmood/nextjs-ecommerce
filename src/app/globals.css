@@ -5,3 +5,7 @@
 .navbar__navLink {
   @apply py-3 navBreak:mx-2 navBreak:py-0 navBreak:my-1 cursor-pointer hover:text-slate-700;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}

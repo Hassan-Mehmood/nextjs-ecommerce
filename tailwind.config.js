@@ -1,3 +1,5 @@
+const { default: plugin } = require('tailwindcss');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -26,7 +28,11 @@ module.exports = {
       minHeight: {
         300: "300px"
       },
+      minWidth: {
+        imageWidth: "256px",
+      }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 };
