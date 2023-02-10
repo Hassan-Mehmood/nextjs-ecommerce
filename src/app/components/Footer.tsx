@@ -3,10 +3,10 @@ import { BsInstagram, BsPinterest } from "react-icons/bs";
 import { FaFacebookF, FaTiktok } from "react-icons/fa";
 export const Footer = () => {
   return (
-    <footer className=" bg-black text-white px-5 md:px-10 py-5 mid:py-10 tracking-widest">
+    <footer className=" py-14 bg-black text-white px-5 md:px-20 mid:py-10 tracking-widest">
       <div className="md:flex justify-between">
         <div className="mb-5">
-          <h1 className="text-3xl mb-3 font-thin">H&H TRADERS</h1>
+          <h1 className="md:text-3xl w-52 min-w-max mb-3 font-thin">BOHEMIAN TRADERS</h1>
           <div className="flex ml-1 space-x-2.5 ">
             <BsInstagram />
             <FaFacebookF />
