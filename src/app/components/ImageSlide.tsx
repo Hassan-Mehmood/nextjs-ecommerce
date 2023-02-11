@@ -1,7 +1,11 @@
 "use client";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { BsTwitter, BsPinterest } from "react-icons/bs";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import {
+  BsTwitter,
+  BsPinterest,
+  BsChevronLeft,
+  BsChevronRight,
+} from "react-icons/bs";
 import { imageSlideData } from "@/JSONData/imageSlideData";
 import React, { useState } from "react";
 import { MdEmail } from "react-icons/md";
@@ -12,48 +16,60 @@ import Image from "next/image";
 export const ImageSlide = () => {
   const [banner, setBanner] = useState(false);
   const [currentCarousel, setCurrentCarousel] = useState(0);
-  // const [currentCarouselLimit, setCurrentCarouselLimit] = useState(currentCarousel+1)
-
-  const bannerVisibilty = (primeIndex: number, secondIndex: number) => {
-    return banner == false
-      ? ((imageSlideData[primeIndex][secondIndex].visible = true),
-        setBanner(true))
-      : ((imageSlideData[primeIndex][secondIndex].visible = false),
-        setBanner(false));
-  };
 
   return (
     <div className="relative flex">
       <button
-        className="absolute top-0 bottom-0 m-auto w-16
-       z-10 hover:bg-white hover:opacity-60 flex justify-center items-center"
+        className="absolute top-0 bottom-0 m-auto w-9 md:w-12 lg:w-16 opacity-0
+       z-10 hover:bg-fadedWhite hover:opacity-100 flex justify-center items-center
+       transition-opacity duration-300 cursor-pointer"
         disabled={currentCarousel <= 0}
-        onClick={() => setCurrentCarousel((prev) => --prev)}
+        onClick={() => setCurrentCarousel((prev) => prev - 6)}
       >
-        <BsChevronLeft className="text-xl stroke-1" />
+        <BsChevronLeft
+          className={`${
+            currentCarousel <= 0 ? "text-gray-500" : "text-black"
+          } text-sm md:text-xl lg:text-3xl stroke-1`}
+        />
       </button>
       {imageSlideData
-        .slice(currentCarousel, currentCarousel + 1)
-        .map((imageArray, primeIndex) => {
-          return imageArray.map((imageElement, secondIndex) => {
-            return (
-              <div key={secondIndex}>
+        .slice(currentCarousel, currentCarousel + 6)
+        .map((imageElement, primeIndex) => {
+          return (
+            <div key={primeIndex}>
+              <div className="relative">
                 <Image
                   src={imageElement.source}
                   alt="model"
-                  className=" cursor-pointer w-64"
+                  className="w-64"
                   width={0}
                   height={0}
                   sizes="100vw"
-                  onClick={() => bannerVisibilty(primeIndex, secondIndex)}
                 />
-                {banner && imageElement.visible == true && (
-                  <div className="fixed flex flex-col bg-white left-2/4 top-56 md:top-40 -translate-x-2/4 -translate-y-1/4 p-4 border-2 border-black h-cardHeight md:items-center lg:items-stretch  lg:flex-row">
+                <div
+                  className="opacity-0 hover:opacity-100 transition-opacity 
+                  duration-300 hover:bg-fadedBlack absolute w-full h-full top-0 
+                  flex justify-center items-center cursor-pointer"
+                  onClick={() => {
+                    setBanner(true);
+                    imageElement.visible = true;
+                  }}
+                >
+                  <FaInstagram className="text-base lg:text-3xl text-white" />
+                </div>
+              </div>
+              {banner && imageElement.visible == true && (
+                <div className="fixed w-screen h-screen top-0 left-0 z-20 bg-fadedMaroon">
+                  <div
+                    className="absolute flex flex-col bg-white top-56 md:top-40 lg:top-50 
+                  left-2/4  -translate-x-2/4 -translate-y-1/4 p-4 border-2 border-black 
+                  h-cardHeightSm md:h-cardHeightMd lg:h-cardHeightLg md:items-center lg:items-stretch  lg:flex-row"
+                  >
                     <GrClose
-                      className="absolute right-0 mr-4 text-2xl cursor-pointer"
+                      className="text-black absolute top-4 right-0 mr-4 text-2xl cursor-pointer"
                       onClick={() => {
-                        imageElement.visible = false;
                         setBanner(false);
+                        imageElement.visible = false;
                       }}
                     />
                     <Image
@@ -64,19 +80,22 @@ export const ImageSlide = () => {
                       className="w-full md:w-349 md:min-h-300 lg:min-h-0 lg:w-full"
                       sizes="100vw"
                     />
-                    <div className="text-center px-3 flex items-center flex-col mt-4 lg:px-20 md:mt-0 lg:w-cardWidth">
-                      <h1 className="text-xs mt-1 md:mt-3 lg:mt-16">
+                    <div
+                      className="text-center px-3 flex items-center flex-col mt-4
+                    lg:px-20 md:mt-0 lg:w-cardWidth"
+                    >
+                      <h1 className="text-xs md:text-sm lg:text-base mt-1 md:mt-3 lg:mt-16">
                         {imageElement.description}
                       </h1>
-                      <div className="flex md:mt-1 lg:mb-6 md:flex-row">
+                      <div className="flex lg:text-3xl md:mt-1 lg:mb-6 md:flex-row">
                         <h1>.</h1>
                         <h1>.</h1>
                         <h1>.</h1>
                       </div>
-                      <h1 className="text-gray-500 mb-3 text-xs lg:mb-8">
+                      <h1 className="text-gray-500 mb-3 text-xs lg:text-sm lg:mb-8">
                         {imageElement.info}
                       </h1>
-                      <div className="flex justify-between w-44 text-gray-500 text-xs">
+                      <div className="text-xs lg:text-xl flex space-x-6 text-gray-500">
                         <FaFacebookF />
                         <BsPinterest />
                         <MdEmail />
@@ -85,18 +104,25 @@ export const ImageSlide = () => {
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
-            );
-          });
+                </div>
+              )}
+            </div>
+          );
         })}
       <button
-        className="absolute top-0 bottom-0 right-0 m-auto w-16
-       z-10 hover:bg-white hover:opacity-60 flex justify-center items-center"
-        disabled={currentCarousel >= imageSlideData.length - 1}
-        onClick={() => setCurrentCarousel((prev) => ++prev)}
+        className="absolute top-0 bottom-0 right-0 w-9 md:w-12 lg:w-16 m-auto
+       z-10 hover:bg-fadedWhite hover:opacity-100 flex justify-center items-center
+       opacity-0 transition-opacity duration-300 cursor-pointer"
+        disabled={currentCarousel + 6 >= imageSlideData.length - 1}
+        onClick={() => setCurrentCarousel((prev) => prev + 6)}
       >
-        <BsChevronRight className="text-xl stroke-1" />
+        <BsChevronRight
+          className={`${
+            currentCarousel + 6 >= imageSlideData.length
+              ? "text-gray-500"
+              : "text-black"
+          } text-sm md:text-xl lg:text-3xl stroke-1`}
+        />
       </button>
     </div>
   );

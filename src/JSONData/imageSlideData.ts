@@ -10,7 +10,7 @@ export const imageSlideData = [
     {
       source: "/ImageSlideModel2.jpg",
       description:
-        "Sunset Soiree: A celebration of beauty and colour, this fit and flared midi dress is made from crisp cotton poplin in tonal shades of peach to red-orange and trimmed with a full tiered ruffle skirt. Contrasted with a sculpted fitted waist bodice and exaggerated balloon sleeves, it is ready for you to wear with confidence. Compliment the dress with gold and copper accessories. Tap to shop the look.",
+        "Sunset Soiree: A celebration of beauty and colour, this fit and flared midi dress is made from crisp cotton poplin in tonal shades of peach to red-orange and trimmed with a full tiered ruffle skirt. Contrasted with a sculpted fitted waist bodice and exaggerated balloon sleeves.",
       info: "BOHEMIAN.TRADERS // INSTAGRAM // 26 JANUARY 2023",
       visible: false,
     },
