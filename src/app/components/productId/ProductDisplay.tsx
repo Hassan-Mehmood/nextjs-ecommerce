@@ -36,7 +36,7 @@ export const ProductDisplay = ({ params }: { params: { productId: string } }) =>
                 />
                 <button
                   disabled={currentCarousel >= productsData.length - 1}
-                  className="absolute top-0 bottom-0  right-0 m-auto"
+                  className="absolute top-0 bottom-0 right-0 m-auto"
                   onClick={() => {
                     setCurrentCarousel((prev) => ++prev);
                   }}
