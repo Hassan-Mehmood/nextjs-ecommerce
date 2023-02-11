@@ -1,5 +1,5 @@
 export const imageSlideData = [
-  [
+  
     {
       source: "/ImageSlideModel1.jpg",
       description:
@@ -42,8 +42,7 @@ export const imageSlideData = [
       info: "BOHEMIAN.TRADERS // INSTAGRAM // 26 NOVEMBER 2022",
       visible: false,
     },
-  ],
-  [
+  
     {
       source: "/ImageSlideModel7.jpg",
       description:
@@ -86,8 +85,7 @@ export const imageSlideData = [
       info: "BOHEMIAN.TRADERS // INSTAGRAM // 26 NOVEMBER 2022",
       visible: false,
     },
-  ],
-  [
+ 
     {
       source: "/ImageSlideModel13.jpg",
       description:
@@ -130,5 +128,5 @@ export const imageSlideData = [
       info: "BOHEMIAN.TRADERS // INSTAGRAM // 26 NOVEMBER 2022",
       visible: false,
     },
-  ],
+  
 ];
