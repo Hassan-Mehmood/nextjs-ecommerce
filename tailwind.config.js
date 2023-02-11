@@ -8,6 +8,8 @@ module.exports = {
       colors: {
         lightOrange: 'rgb(247, 244, 240)',
         darkGray: 'rgb(112, 112, 112)',
+        lightMaroon: 'rgba(116, 99, 99, 0.65)',
+        lightBlack: 'rgba(0, 0, 0, 0.6)'
       },
       screens: {
         navBreak: '960px',
