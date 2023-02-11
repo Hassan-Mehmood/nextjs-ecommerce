@@ -6,6 +6,7 @@ import { SingleProduct } from './SingleProduct';
 export const ProductGrid = () => {
   const [productVision, setProductVision] = useState(true);
   const [modelVision, setModelVision] = useState(false);
+
   return (
     <section>
       <div className="absolute right-20 space-x-5">

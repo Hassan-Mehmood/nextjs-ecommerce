@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 interface propsInterface {
   id: string;
@@ -11,7 +11,7 @@ interface propsInterface {
 
 export const SingleProduct = (props: propsInterface) => {
   return (
-    <Link href={`./all/${props.id}`}>
+    <Link href={`/${props.id}`}>
       <Image
         src={props.source}
         alt="productImage"

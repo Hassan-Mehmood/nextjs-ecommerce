@@ -1,15 +1,11 @@
-"use client";
-import Image from "next/image";
-import { productsData } from "@/JSONData/productsData";
-import React, { useState } from "react";
-import { ProductDetails } from "./ProductDetails";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+'use client';
+import Image from 'next/image';
+import { productsData } from '@/JSONData/productsData';
+import React, { useState } from 'react';
+import { ProductDetails } from './ProductDetails';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
-export const ProductDisplay = ({
-  params,
-}: {
-  params: { productId: string };
-}) => {
+export const ProductDisplay = ({ params }: { params: { productId: string } }) => {
   const [currentCarousel, setCurrentCarousel] = useState(0);
 
   return (
@@ -27,9 +23,7 @@ export const ProductDisplay = ({
                   }}
                 >
                   <BsChevronLeft
-                    className={`${
-                      currentCarousel <= 0 ? "text-gray-400" : "text-black"
-                    } text-lg`}
+                    className={`${currentCarousel <= 0 ? 'text-gray-400' : 'text-black'} text-lg`}
                   />
                 </button>
                 <Image
@@ -49,9 +43,7 @@ export const ProductDisplay = ({
                 >
                   <BsChevronRight
                     className={`${
-                      currentCarousel >= productsData.length - 1
-                        ? "text-gray-400"
-                        : "text-black"
+                      currentCarousel >= productsData.length - 1 ? 'text-gray-400' : 'text-black'
                     } text-lg`}
                   />
                 </button>
