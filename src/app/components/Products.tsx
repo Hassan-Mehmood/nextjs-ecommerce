@@ -6,6 +6,7 @@ import { AiOutlineClose, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-i
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
 import { Dispatch, SetStateAction, useState } from 'react';
 import ProductModal from './ProductModal';
+import Link from 'next/link';
 
 const work_sans = Work_Sans({
   subsets: [],
@@ -62,12 +63,16 @@ const Product = () => {
               className="w-full h-auto"
             />
           </div>
-          <p
-            className={`${work_sans.className} text-xs lg:text-base tracking-widest leading-5 mb-4`}
-          >
-            {product.text}
-          </p>
-          <p className={`${work_sans.className} text-xs lg:text-base`}>${product.price}</p>
+          <Link href={`/${product.text}`}>
+            <div>
+              <p
+                className={`${work_sans.className} text-xs lg:text-base tracking-widest leading-5 mb-4`}
+              >
+                {product.text}
+              </p>
+              <p className={`${work_sans.className} text-xs lg:text-base`}>${product.price}</p>
+            </div>
+          </Link>
         </div>
       ))}
 
