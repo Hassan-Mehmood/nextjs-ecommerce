@@ -12,6 +12,7 @@ const work_sans = Work_Sans({
 });
 
 const productImages = ['/modalPic.jpg', '/modalPic1.jpg'];
+const productSizes = ['XS', 'SM', 'MD', 'LG', 'XL'];
 
 function ProductPage({ params }: { params: { productId: string } }) {
   const [productImageNumber, setProductImageNumber] = useState(0);
@@ -69,21 +70,32 @@ function ProductPage({ params }: { params: { productId: string } }) {
 
             <div className="mb-4">
               <p>Size:</p>
-              <div>
-                <div className="inline-block bg-gray-400 relative">
-                  <label htmlFor="sm" className="">
-                    SM
-                  </label>
-                  <input type="checkbox" id="sm" className="w-9 h-9" />
-                </div>
-                {/* <label htmlFor="md">MD</label> */}
-                {/* <input type="checkbox" id="md" className="w-6 h-6 mx-1 inline-block" /> */}
-                {/* <label htmlFor="lg">LG</label> */}
-                {/* <input type="checkbox" id="lg" className="w-6 h-6 mx-1 inline-block" /> */}
+              <div className="mt-2">
+                {productSizes.map((size) => (
+                  <div key={size} className="inline-block w-10 h-9 mx-2 first:ml-0 relative">
+                    <input
+                      type="radio"
+                      name="size"
+                      id={size}
+                      className="absolute w-10 h-9 border border-slate-700 appearance-none checked:bg-black peer"
+                    />
+                    <label
+                      htmlFor={size}
+                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 peer-checked:text-white"
+                    >
+                      {size}
+                    </label>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <button className="w-full bg-slate-900 text-white py-3 opacity-90">Add to cart</button>
+            <button className="w-full bg-slate-900 text-white py-3 opacity-90 mb-2">
+              Add to cart
+            </button>
+            <button className="w-full border border-slate-300 py-3 opacity-90">
+              Add to Wishlist
+            </button>
             <div className="flex items-center mt-4">
               <div className="flex items-center">
                 <BsFillCreditCard2BackFill size={32} />
