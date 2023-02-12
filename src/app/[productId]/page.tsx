@@ -59,18 +59,31 @@ function ProductPage({ params }: { params: { productId: string } }) {
             </button>
           </div>
         </section>
-        <section className="order-2 sm:order-2 px-4 w-full max-w-[800px]">
+        <section className="order-2 sm:order-2 px-4 w-full lg:max-w-[416px] max-w-[800px]">
           <div className="md:h-full">
             <div className="mb-4">
               <h4 className={`text-3xl mb-2`}>V Neck Elastic Waist Midi Dress in Periwinkle</h4>
               <h5 className="mb-3 tracking-widest opacity-50">Bohemian Traders</h5>
               <p className="tracking-widest">$199</p>
             </div>
-            <div>
-              <button className="w-full bg-slate-900 text-white py-3 opacity-90">
-                Add to cart
-              </button>
+
+            <div className="mb-4">
+              <p>Size:</p>
+              <div>
+                <div className="inline-block bg-gray-400 relative">
+                  <label htmlFor="sm" className="">
+                    SM
+                  </label>
+                  <input type="checkbox" id="sm" className="w-9 h-9" />
+                </div>
+                {/* <label htmlFor="md">MD</label> */}
+                {/* <input type="checkbox" id="md" className="w-6 h-6 mx-1 inline-block" /> */}
+                {/* <label htmlFor="lg">LG</label> */}
+                {/* <input type="checkbox" id="lg" className="w-6 h-6 mx-1 inline-block" /> */}
+              </div>
             </div>
+
+            <button className="w-full bg-slate-900 text-white py-3 opacity-90">Add to cart</button>
             <div className="flex items-center mt-4">
               <div className="flex items-center">
                 <BsFillCreditCard2BackFill size={32} />
