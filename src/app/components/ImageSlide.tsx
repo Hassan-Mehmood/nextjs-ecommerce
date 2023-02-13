@@ -1,15 +1,20 @@
-'use client';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { BsTwitter, BsPinterest, BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import { imageSlideData } from '@/JSONData/imageSlideData';
-import React, { useState } from 'react';
-import { MdEmail } from 'react-icons/md';
-import { BiLink } from 'react-icons/bi';
-import { GrClose } from 'react-icons/gr';
-import Image from 'next/image';
+"use client";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import {
+  BsTwitter,
+  BsPinterest,
+  BsChevronLeft,
+  BsChevronRight,
+} from "react-icons/bs";
+import { imageSlideData } from "@/JSONData/imageSlideData";
+import React, { useState } from "react";
+import { MdEmail } from "react-icons/md";
+import { BiLink } from "react-icons/bi";
+import { GrClose } from "react-icons/gr";
+import Image from "next/image";
 
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
   desktop: {
@@ -63,8 +68,7 @@ export const ImageSlide = () => {
 
       <Carousel responsive={responsive} className="w-full">
         {imageSlideData.map((imageElement) => (
-          <div key={imageElement.id}>
-            <div className="relative">
+            <div key={imageElement.id} className="relative">
               <Image
                 src={imageElement.source}
                 alt="model"
@@ -86,7 +90,6 @@ export const ImageSlide = () => {
                 <FaInstagram className="text-base lg:text-3xl text-white" />
               </div>
             </div>
-          </div>
         ))}
       </Carousel>
       {showBanner && imageSlideData[showBannerID].visible == true && (
