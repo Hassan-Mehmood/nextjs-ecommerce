@@ -31,7 +31,7 @@ const responsive = {
 
 export const ImageSlide = () => {
   const [showBanner, setBanner] = useState(false);
-  const [showBannerID, setShowBannerID] = useState<number | undefined>(undefined);
+  const [showBannerID, setShowBannerID] = useState<number>(0);
   const [currentCarousel, setCurrentCarousel] = useState(0);
 
   function showImageBanner(imageID: number) {
@@ -86,51 +86,51 @@ export const ImageSlide = () => {
             </div>
           ))}
       </Carousel>
-      {/* {banner && imageElement.visible == true && (
-                <div className="fixed w-screen h-screen top-0 left-0 z-20 bg-fadedMaroon">
-                  <div
-                    className="absolute flex flex-col bg-white top-56 md:top-40 lg:top-50 
+      {showBanner && imageSlideData[showBannerID].visible == true && (
+        <div className="fixed w-screen h-screen top-0 left-0 z-20 bg-fadedMaroon">
+          <div
+            className="absolute flex flex-col bg-white top-56 md:top-40 lg:top-50 
                   left-2/4  -translate-x-2/4 -translate-y-1/4 p-4 border-2 border-black 
                   h-cardHeightSm md:h-cardHeightMd lg:h-cardHeightLg md:items-center lg:items-stretch  lg:flex-row"
-                  >
-                    <GrClose
-                      className="text-black absolute top-4 right-0 mr-4 text-2xl cursor-pointer"
-                      onClick={() => {
-                        setBanner(false);
-                        imageElement.visible = false;
-                      }}
-                    />
-                    <Image
-                      src={imageElement.source}
-                      alt="model1"
-                      width={0}
-                      height={0}
-                      className="w-full md:w-349 md:min-h-300 lg:min-h-0 lg:w-full"
-                      sizes="100vw"
-                    />
-                    <div className="text-center px-3 flex items-center flex-col mt-4 lg:px-20 md:mt-0 lg:w-cardWidth">
-                      <h1 className="text-xs md:text-sm lg:text-base mt-1 md:mt-3 lg:mt-16">
-                        {imageElement.description}
-                      </h1>
-                      <div className="flex lg:text-3xl md:mt-1 lg:mb-6 md:flex-row">
-                        <h1>.</h1>
-                        <h1>.</h1>
-                        <h1>.</h1>
-                      </div>
-                      <h1 className="text-gray-500 mb-3 text-xs lg:text-sm lg:mb-8">
-                        {imageElement.info}
-                      </h1>
-                      <div className="text-xs lg:text-xl flex space-x-6 text-gray-500">
-                        <FaFacebookF />
-                        <BsPinterest />
-                        <MdEmail />
-                        <BsTwitter />
-                        <BiLink />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )} */}
+          >
+            <GrClose
+              className="text-black absolute top-4 right-0 mr-4 text-2xl cursor-pointer"
+              onClick={() => {
+                setBanner(false);
+                imageSlideData[showBannerID].visible = false;
+              }}
+            />
+            <Image
+              src={imageSlideData[showBannerID].source}
+              alt="model1"
+              width={0}
+              height={0}
+              className="w-full md:w-349 md:min-h-300 lg:min-h-0 lg:w-full"
+              sizes="100vw"
+            />
+            <div className="text-center px-3 flex items-center flex-col mt-4 lg:px-20 md:mt-0 lg:w-cardWidth">
+              <h1 className="text-xs md:text-sm lg:text-base mt-1 md:mt-3 lg:mt-16">
+                {imageSlideData[showBannerID].description}
+              </h1>
+              <div className="flex lg:text-3xl md:mt-1 lg:mb-6 md:flex-row">
+                <h1>.</h1>
+                <h1>.</h1>
+                <h1>.</h1>
+              </div>
+              <h1 className="text-gray-500 mb-3 text-xs lg:text-sm lg:mb-8">
+                {imageSlideData[showBannerID].info}
+              </h1>
+              <div className="text-xs lg:text-xl flex space-x-6 text-gray-500">
+                <FaFacebookF />
+                <BsPinterest />
+                <MdEmail />
+                <BsTwitter />
+                <BiLink />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       {/* <button
         className="absolute top-0 bottom-0 right-0 w-9 md:w-12 lg:w-16 m-auto
        z-10 hover:bg-fadedWhite hover:opacity-100 flex justify-center items-center
