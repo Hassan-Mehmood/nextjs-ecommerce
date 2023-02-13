@@ -18,13 +18,18 @@ const responsive = {
     slidesToSlide: 1, // optional, default to 1.
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
+    breakpoint: { max: 1024, min: 800 },
+    items: 6,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+  smallTablet: {
+    breakpoint: { max: 788, min: 404 },
+    items: 3,
+    slidesToSlide: 1, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1,
+    items: 3,
     slidesToSlide: 1, // optional, default to 1.
   },
 };
@@ -57,34 +62,32 @@ export const ImageSlide = () => {
       </button> */}
 
       <Carousel responsive={responsive} className="w-full">
-        {imageSlideData
-          // .slice(currentCarousel, currentCarousel + 6)
-          .map((imageElement) => (
-            <div key={imageElement.id}>
-              <div className="relative">
-                <Image
-                  src={imageElement.source}
-                  alt="model"
-                  className="w-full"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                <div
-                  className="opacity-0 hover:opacity-100 transition-opacity 
+        {imageSlideData.map((imageElement) => (
+          <div key={imageElement.id}>
+            <div className="relative">
+              <Image
+                src={imageElement.source}
+                alt="model"
+                className="w-full"
+                width={0}
+                height={0}
+                sizes="100vw"
+              />
+              <div
+                className="opacity-0 hover:opacity-100 transition-opacity 
                   duration-300 hover:bg-fadedBlack absolute w-full h-full top-0 
                   flex justify-center items-center cursor-pointer"
-                  onClick={() => {
-                    showImageBanner(imageElement.id);
-                    // setBanner(true);
-                    // imageElement.visible = true;
-                  }}
-                >
-                  <FaInstagram className="text-base lg:text-3xl text-white" />
-                </div>
+                onClick={() => {
+                  showImageBanner(imageElement.id);
+                  // setBanner(true);
+                  // imageElement.visible = true;
+                }}
+              >
+                <FaInstagram className="text-base lg:text-3xl text-white" />
               </div>
             </div>
-          ))}
+          </div>
+        ))}
       </Carousel>
       {showBanner && imageSlideData[showBannerID].visible == true && (
         <div className="fixed w-screen h-screen top-0 left-0 z-20 bg-fadedMaroon">
