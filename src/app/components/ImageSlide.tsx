@@ -89,6 +89,7 @@ export const ImageSlide = () => {
           </div>
         ))}
       </Carousel>
+
       {showBanner && imageSlideData[showBannerID].visible == true && (
         <div className="fixed w-screen h-screen top-0 left-0 z-20 bg-fadedMaroon">
           <div
