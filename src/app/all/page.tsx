@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
-import { ProductGrid } from './components/ProductGrid';
-import { RefineSpec } from './components/RefineSpec';
-import { SortSpec } from './components/SortSpec';
+import { ProductGrid } from '../components/All/ProductGrid';
+import { RefineSpec } from '../components/All/RefineSpec';
+import { SortSpec } from '../components/All/SortSpec';
 
 export default function All() {
   const [refineSection, setRefineSection] = useState(false);
