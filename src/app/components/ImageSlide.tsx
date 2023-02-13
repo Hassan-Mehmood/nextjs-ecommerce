@@ -1,41 +1,36 @@
-"use client";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import {
-  BsTwitter,
-  BsPinterest,
-  BsChevronLeft,
-  BsChevronRight,
-} from "react-icons/bs";
-import { imageSlideData } from "@/JSONData/imageSlideData";
-import React, { useState } from "react";
-import { MdEmail } from "react-icons/md";
-import { BiLink } from "react-icons/bi";
-import { GrClose } from "react-icons/gr";
-import Image from "next/image";
+'use client';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { BsTwitter, BsPinterest, BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { imageSlideData } from '@/JSONData/imageSlideData';
+import React, { useState } from 'react';
+import { MdEmail } from 'react-icons/md';
+import { BiLink } from 'react-icons/bi';
+import { GrClose } from 'react-icons/gr';
+import Image from 'next/image';
 
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 6,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 6, // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 800 },
     items: 6,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 6, // optional, default to 1.
   },
   smallTablet: {
     breakpoint: { max: 788, min: 404 },
     items: 3,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 3, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 3,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 3, // optional, default to 1.
   },
 };
 
@@ -68,28 +63,28 @@ export const ImageSlide = () => {
 
       <Carousel responsive={responsive} className="w-full">
         {imageSlideData.map((imageElement) => (
-            <div key={imageElement.id} className="relative">
-              <Image
-                src={imageElement.source}
-                alt="model"
-                className="w-full"
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-              <div
-                className="opacity-0 hover:opacity-100 transition-opacity 
+          <div key={imageElement.id} className="relative">
+            <Image
+              src={imageElement.source}
+              alt="model"
+              className="w-full"
+              width={0}
+              height={0}
+              sizes="100vw"
+            />
+            <div
+              className="opacity-0 hover:opacity-100 transition-opacity 
                   duration-300 hover:bg-fadedBlack absolute w-full h-full top-0 
                   flex justify-center items-center cursor-pointer"
-                onClick={() => {
-                  showImageBanner(imageElement.id);
-                  // setBanner(true);
-                  // imageElement.visible = true;
-                }}
-              >
-                <FaInstagram className="text-base lg:text-3xl text-white" />
-              </div>
+              onClick={() => {
+                showImageBanner(imageElement.id);
+                // setBanner(true);
+                // imageElement.visible = true;
+              }}
+            >
+              <FaInstagram className="text-base lg:text-3xl text-white" />
             </div>
+          </div>
         ))}
       </Carousel>
 
