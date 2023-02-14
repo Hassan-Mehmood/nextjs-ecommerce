@@ -50,7 +50,7 @@ const MainSection = () => {
       <section className="flex flex-col md:flex-row m-0">
         {data.map((element) => {
           return (
-            <div className="w-full relative">
+            <div key={element.source} className="w-full relative">
               <div className="absolute top-0 bottom-0 left-0 right-0 bg-black hover:opacity-30 opacity-0 transition-opacity duration-300 cursor-pointer" />
               <Image
                 alt="model"
