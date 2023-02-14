@@ -37,7 +37,6 @@ const responsive = {
 export const ImageSlide = () => {
   const [showBanner, setBanner] = useState(false);
   const [showBannerID, setShowBannerID] = useState<number>(0);
-  const [currentCarousel, setCurrentCarousel] = useState(0);
 
   function showImageBanner(imageID: number) {
     imageSlideData[imageID - 1].visible = true;

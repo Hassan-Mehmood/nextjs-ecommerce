@@ -13,7 +13,6 @@ const work_sans = Work_Sans({
 interface TproductModal {
   productImageNumber: number;
   setProductImageNumber: Dispatch<SetStateAction<number>>;
-  showProductDescription: boolean;
   setShowProductDescription: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -22,7 +21,6 @@ const productImages = ['/modalPic.jpg', '/modalPic1.jpg'];
 export default function ProductModal({
   productImageNumber,
   setProductImageNumber,
-  showProductDescription,
   setShowProductDescription,
 }: TproductModal) {
   return (

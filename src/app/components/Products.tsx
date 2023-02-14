@@ -77,7 +77,6 @@ const Product = () => {
         <ProductModal
           productImageNumber={productImageNumber}
           setProductImageNumber={setProductImageNumber}
-          showProductDescription={showProductDescription}
           setShowProductDescription={setShowProductDescription}
         />
       ) : null}
