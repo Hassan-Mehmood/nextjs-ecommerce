@@ -62,14 +62,16 @@ const Navbar = () => {
         <BsSuitHeart className="cursor-pointer navBreak:hidden" size={24} />
       </div>
       <div className="mx-8">
-        <Image
-          src="/logo.webp"
-          alt=""
-          width="0"
-          height="0"
-          sizes="50vw"
-          className="w-full h-auto max-h-[24px] cursor-pointer"
-        />
+        <Link href={'/'}>
+          <Image
+            src="/logo.webp"
+            alt=""
+            width="0"
+            height="0"
+            sizes="50vw"
+            className="w-full h-auto max-h-[24px] cursor-pointer"
+          />
+        </Link>
       </div>
       <div className="flex flex-1 justify-end">
         <CgProfile size={24} className="mr-2 cursor-pointer" />

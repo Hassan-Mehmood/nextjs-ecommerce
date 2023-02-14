@@ -10,7 +10,7 @@ module.exports = {
         darkGray: 'rgb(112, 112, 112)',
         fadedMaroon: 'rgba(116, 99, 99, 0.65)',
         fadedBlack: 'rgba(0, 0, 0, 0.7)',
-        fadedWhite: 'rgba(255, 255, 255, 0.5)'
+        fadedWhite: 'rgba(255, 255, 255, 0.5)',
       },
       screens: {
         navBreak: '960px',
@@ -21,26 +21,25 @@ module.exports = {
         xl: '1280px',
         '2xl': '1536px',
       },
-      inset:{
-        '50': '12.5rem'
+      inset: {
+        50: '12.5rem',
       },
       width: {
         cardWidth: '1070px',
-        349: "349px"
-
-      }, height: {
+        349: '349px',
+      },
+      height: {
         cardHeightSm: '625px',
         cardHeightMd: '670px',
-        cardHeightLg: '640px'
+        cardHeightLg: '640px',
       },
       minHeight: {
-        300: "300px"
+        300: '300px',
       },
       minWidth: {
-        imageWidth: "256px",
-      }
+        imageWidth: '256px',
+      },
     },
   },
-  plugins: [
-  ],
+  plugins: [],
 };
