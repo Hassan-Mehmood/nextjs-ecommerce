@@ -1,27 +1,27 @@
-import Image from "next/image";
-import { Work_Sans } from "@next/font/google";
+import Image from 'next/image';
+import { Work_Sans } from '@next/font/google';
 
 const work_sans = Work_Sans({
   subsets: [],
-  weight: "500",
+  weight: '500',
 });
 
 const data = [
   {
-    source: "/denim-cta-1.webp",
-    text: "SHOP WHATS NEW",
+    source: '/denim-cta-1.webp',
+    text: 'SHOP WHATS NEW',
   },
   {
-    source: "/denim-cta-2.webp",
-    text: "SHOP TOPS",
+    source: '/denim-cta-2.webp',
+    text: 'SHOP TOPS',
   },
   {
-    source: "/denim-cta-3.webp",
-    text: "SHOP BOTTOMS",
+    source: '/denim-cta-3.webp',
+    text: 'SHOP BOTTOMS',
   },
   {
-    source: "/denim-cta-4.webp",
-    text: "SHOP DENIM",
+    source: '/denim-cta-4.webp',
+    text: 'SHOP DENIM',
   },
 ];
 

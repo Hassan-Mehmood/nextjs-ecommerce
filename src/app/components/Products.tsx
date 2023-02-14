@@ -1,10 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { Work_Sans } from '@next/font/google';
-import { RiTruckFill } from 'react-icons/ri';
-import { AiOutlineClose, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import { BsFillCreditCard2BackFill } from 'react-icons/bs';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import ProductModal from './ProductModal';
 import Link from 'next/link';
 

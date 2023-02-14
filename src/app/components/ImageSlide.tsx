@@ -1,6 +1,6 @@
 'use client';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { BsTwitter, BsPinterest, BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { BsTwitter, BsPinterest } from 'react-icons/bs';
 import { imageSlideData } from '@/JSONData/imageSlideData';
 import React, { useState } from 'react';
 import { MdEmail } from 'react-icons/md';

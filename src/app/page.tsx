@@ -9,7 +9,7 @@ export default function Home() {
       <MainSection />
       <Product />
       <AboutUs />
-      <ImageSlide/>
+      <ImageSlide />
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 interface propsInterface {
   title: string;
   price: number;
@@ -13,24 +13,12 @@ export const ProductDetails = (props: propsInterface) => {
       <div className="text-sm space-y-3">
         <h1>SIZE:</h1>
         <div className="flex space-x-6">
-          <button className="border border-black w-12 py-3  tracking-widest">
-            XS
-          </button>
-          <button className="border border-black w-12  tracking-widest">
-            SM
-          </button>
-          <button className="border border-black w-12  tracking-widest">
-            MD
-          </button>
-          <button className="border border-black w-12  tracking-widest">
-            LG
-          </button>
-          <button className="border border-black w-12  tracking-widest">
-            XL
-          </button>
-          <button className="border border-black w-12  tracking-widest">
-            XXL
-          </button>
+          <button className="border border-black w-12 py-3  tracking-widest">XS</button>
+          <button className="border border-black w-12  tracking-widest">SM</button>
+          <button className="border border-black w-12  tracking-widest">MD</button>
+          <button className="border border-black w-12  tracking-widest">LG</button>
+          <button className="border border-black w-12  tracking-widest">XL</button>
+          <button className="border border-black w-12  tracking-widest">XXL</button>
         </div>
       </div>
       <div className="flex flex-col space-y-3">

@@ -1,6 +1,6 @@
-import React from "react";
-import { BsInstagram, BsPinterest } from "react-icons/bs";
-import { FaFacebookF, FaTiktok } from "react-icons/fa";
+import React from 'react';
+import { BsInstagram, BsPinterest } from 'react-icons/bs';
+import { FaFacebookF, FaTiktok } from 'react-icons/fa';
 export const Footer = () => {
   return (
     <footer className=" py-14 bg-black text-white px-5 md:px-20 mid:py-10 tracking-widest">
@@ -35,17 +35,13 @@ export const Footer = () => {
         <div className="text-sm ">
           <h3>SUBSCRIBE TO RECIEVE UPDATES AND SPECIAL OFFERS</h3>
           <div className="mt-4 border-2 px-2 py-2 md:border-b-2 md:border-l-0 md:border-r-0 md:border-t-0 pb-2 flex justify-between">
-            <input
-              className="focus:outline-none bg-transparent"
-              placeholder="YOUR EMAIL ADDRESS"
-            />
+            <input className="focus:outline-none bg-transparent" placeholder="YOUR EMAIL ADDRESS" />
             <button className="tracking-wider">SUBSCRIBE</button>
           </div>
         </div>
       </div>
       <h3 className="mt-10 text-xs">
-        CUSTOMERSERVICE@BOHEMIANTRADERS.COM | +61 2 4327 8640 | MON – FRI | 9AM
-        – 5PM AEST
+        CUSTOMERSERVICE@BOHEMIANTRADERS.COM | +61 2 4327 8640 | MON – FRI | 9AM – 5PM AEST
       </h3>
     </footer>
   );

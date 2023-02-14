@@ -2,7 +2,7 @@ import React from 'react';
 
 export const AboutUs = () => {
   return (
- <div className="md:flex tracking-widest mx-4 lg:mx-20 my-5 md:my-20 px-5 md:px-10 lg:px-20 py-5 md:py-14 bg-lightOrange md:text-left">
+    <div className="md:flex tracking-widest mx-4 lg:mx-20 my-5 md:my-20 px-5 md:px-10 lg:px-20 py-5 md:py-14 bg-lightOrange md:text-left">
       <h2 className="w-full text-center md:text-left text-3xl font-light mb-4 md:mb-0 md:mr-20">
         MADE FOR THE MODERN BOHEMIAN
       </h2>
