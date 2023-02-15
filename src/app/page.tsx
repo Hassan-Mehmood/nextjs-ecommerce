@@ -1,5 +1,5 @@
-import { ImageSlide } from './components/ImageSlide';
-import { AboutUs } from './components/AboutUs';
+import ImageSlide from './components/ImageSlide';
+import AboutUs from './components/AboutUs';
 import MainSection from './components/MainSection';
 import Product from './components/Products';
 

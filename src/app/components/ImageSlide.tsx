@@ -34,7 +34,7 @@ const responsive = {
   },
 };
 
-export const ImageSlide = () => {
+export default function ImageSlide() {
   const [showBanner, setBanner] = useState(false);
   const [showBannerID, setShowBannerID] = useState<number>(0);
 
@@ -147,4 +147,4 @@ export const ImageSlide = () => {
       </button> */}
     </section>
   );
-};
+}
