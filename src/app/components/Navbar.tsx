@@ -74,10 +74,18 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex flex-1 justify-end">
-        <CgProfile size={24} className="mr-2 cursor-pointer" />
-        <BsSuitHeart className="hidden navBreak:block mr-2 cursor-pointer" size={24} />
-        <BsBag className="hidden navBreak:block mr-2 cursor-pointer" size={24} />
-        <BiSearch className="cursor-pointer" size={24} />
+        <button>
+          <CgProfile size={24} className="mr-2 cursor-pointer" />
+        </button>
+        <button>
+          <BsSuitHeart className="hidden navBreak:block mr-2 cursor-pointer" size={24} />
+        </button>
+        <button>
+          <BsBag className="hidden navBreak:block mr-2 cursor-pointer" size={24} />
+        </button>
+        <button>
+          <BiSearch className="cursor-pointer" size={24} />
+        </button>
       </div>
     </nav>
   );
