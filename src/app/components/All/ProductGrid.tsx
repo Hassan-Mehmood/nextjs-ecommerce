@@ -1,4 +1,4 @@
-'use clien';
+'use client';
 import { productsData } from '@/JSONData/productsData';
 import React, { useState } from 'react';
 import { SingleProduct } from './SingleProduct';

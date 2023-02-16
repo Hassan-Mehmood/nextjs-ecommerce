@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import { useState } from "react";
-import { RefineSpec } from "./RefineSpec";
-import { SortSpec } from "./SortSpec";
-import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+'use client';
+import React from 'react';
+import { useState } from 'react';
+import { RefineSpec } from './RefineSpec';
+import { SortSpec } from './SortSpec';
+import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 export const SideBar = () => {
   const [refineSection, setRefineSection] = useState(false);
   const [sortSection, setSortSection] = useState(false);
