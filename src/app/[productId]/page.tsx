@@ -1,22 +1,17 @@
-'use client';
-import { useState } from 'react';
 import { Work_Sans } from '@next/font/google';
 import Image from 'next/image';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
 import { RiTruckFill } from 'react-icons/ri';
+import MobileCarousel from '../components/productId/MobileCarousel';
 
 const work_sans = Work_Sans({
   subsets: [],
   weight: '500',
 });
 
-const productImages = ['/modalPic.jpg', '/modalPic1.jpg'];
 const productSizes = ['XS', 'SM', 'MD', 'LG', 'XL'];
 
-function ProductPage({ params }: { params: { productId: string } }) {
-  const [productImageNumber, setProductImageNumber] = useState(0);
-
+function ProductPage() {
   return (
     <section className="max-w-[1440px] mx-auto mb-4">
       <div className="flex flex-col lg:flex-row justify-around items-center lg:h-full py-12 md:py-4">
@@ -29,36 +24,7 @@ function ProductPage({ params }: { params: { productId: string } }) {
             <Image src="/modalPic.jpg" alt="" fill className="object-contain w-full" />
           </div>
 
-          <div className="relative w-full h-auto sm:hidden">
-            <button
-              className="absolute top-0 bottom-0 m-auto disabled:text-gray-400"
-              disabled={productImageNumber <= 0}
-              onClick={() => {
-                setProductImageNumber((current) => --current);
-              }}
-            >
-              <AiOutlineArrowLeft size={32} />
-            </button>
-            <div className="">
-              <Image
-                src={productImages[productImageNumber]}
-                alt="productImage"
-                width="0"
-                height="0"
-                sizes="100vw"
-                className="w-full md:mt-8 lg:mt-0"
-              />
-            </div>
-            <button
-              className="absolute top-0 bottom-0 right-0 m-auto disabled:text-gray-400"
-              disabled={productImageNumber >= productImages.length - 1}
-              onClick={() => {
-                setProductImageNumber((current) => ++current);
-              }}
-            >
-              <AiOutlineArrowRight size={32} className="" />
-            </button>
-          </div>
+          <MobileCarousel />
         </section>
         <section className="order-2 sm:order-2 px-4 w-full lg:max-w-[416px] max-w-[800px]">
           <div className="md:h-full">
@@ -77,11 +43,11 @@ function ProductPage({ params }: { params: { productId: string } }) {
                       type="radio"
                       name="size"
                       id={size}
-                      className="absolute w-10 h-9 border border-slate-700 appearance-none checked:bg-black peer"
+                      className="absolute w-10 h-9 border border-slate-700 appearance-none checked:bg-black peer cursor-pointer"
                     />
                     <label
                       htmlFor={size}
-                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 peer-checked:text-white"
+                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 peer-checked:text-white cursor-pointer"
                     >
                       {size}
                     </label>
