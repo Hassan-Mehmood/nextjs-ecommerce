@@ -6,3 +6,19 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Product {
+  product_id String   @id @default(cuid())
+  source     String[]
+  title      String
+  price      Int
+  size       String[]
+}
+
+model Carousel {
+  Carousel_id String  @id @default(cuid())
+  source      String
+  description String
+  info        String
+  visible     Boolean @default(false)
+}
