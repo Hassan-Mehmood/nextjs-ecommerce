@@ -16,7 +16,7 @@ model Product {
 }
 
 model Carousel {
-  Carousel_id String  @id @default(cuid())
+  carousel_id String  @id @default(cuid())
   source      String
   description String
   info        String
