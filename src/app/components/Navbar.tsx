@@ -75,7 +75,9 @@ const Navbar = () => {
       </div>
       <div className="flex flex-1 justify-end">
         <button>
-          <CgProfile size={24} className="mr-2 cursor-pointer" />
+          <Link href="/login">
+            <CgProfile size={24} className="mr-2 cursor-pointer" />
+          </Link>
         </button>
         <button>
           <BsSuitHeart className="hidden navBreak:block mr-2 cursor-pointer" size={24} />
