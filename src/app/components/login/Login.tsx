@@ -20,9 +20,6 @@ export default function Login() {
         <button className="bg-[#323232] text-white py-2 w-full flex-1" onClick={() => signIn()}>
           Sign in
         </button>
-        <button className="bg-[#323232] text-white py-2 w-full flex-1" onClick={() => signOut()}>
-          Logout
-        </button>
         <p className="flex-1 f-full text-center text-[#c4a173]">Forgot your password</p>
       </div>
     </section>
