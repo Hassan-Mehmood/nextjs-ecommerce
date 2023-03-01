@@ -5,18 +5,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const { carousel_id, source, description, info } = req.body;
+  if (req.method === "GET") {
     try {
-      const carouselItem = await client.carousel.create({
-        data: {
-          carousel_id,
-          source,
-          description,
-          info,
-        },
-      });
-      res.status(200).json(carouselItem);
+      const allProducts = await client.product.findMany();
+      res.status(200).json(allProducts);
     } catch (err) {
       res.status(400).json(err);
     }

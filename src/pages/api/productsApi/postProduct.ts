@@ -6,17 +6,12 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { carousel_id, source, description, info } = req.body;
+    // const { product_id, source, title, price, size } = req.body;
     try {
-      const carouselItem = await client.carousel.create({
-        data: {
-          carousel_id,
-          source,
-          description,
-          info,
-        },
+      const product = await client.product.create({
+        data: req.body,
       });
-      res.status(200).json(carouselItem);
+      res.status(200).json(product);
     } catch (err) {
       res.status(400).json(err);
     }

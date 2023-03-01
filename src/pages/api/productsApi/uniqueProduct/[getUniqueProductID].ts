@@ -5,18 +5,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const { carousel_id, source, description, info } = req.body;
+  if (req.method === "GET") {
+    const getUniqueProductID = req.query.getUniqueProductID?.toString();
     try {
-      const carouselItem = await client.carousel.create({
-        data: {
-          carousel_id,
-          source,
-          description,
-          info,
+      const uniqueProduct = await client.product.findUnique({
+        where: {
+          product_id: getUniqueProductID,
         },
       });
-      res.status(200).json(carouselItem);
+      res.status(200).json(uniqueProduct);
     } catch (err) {
       res.status(400).json(err);
     }

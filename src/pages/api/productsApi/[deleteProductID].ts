@@ -5,18 +5,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const { carousel_id, source, description, info } = req.body;
+  if (req.method === "DELETE") {
+    const deleteProductID = req.query.deleteProductID?.toString();
     try {
-      const carouselItem = await client.carousel.create({
-        data: {
-          carousel_id,
-          source,
-          description,
-          info,
+      const deletedProduct = await client.product.delete({
+        where: {
+          product_id: deleteProductID,
         },
       });
-      res.status(200).json(carouselItem);
+      res.status(200).json(deletedProduct);
     } catch (err) {
       res.status(400).json(err);
     }
