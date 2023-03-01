@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsInstagram, BsPinterest } from 'react-icons/bs';
 import { FaFacebookF, FaTiktok } from 'react-icons/fa';
-export const Footer = () => {
+export default function Footer() {
   return (
     <footer className=" py-14 bg-black text-white px-5 md:px-20 mid:py-10 tracking-widest">
       <div className="md:flex justify-between">
@@ -45,4 +45,4 @@ export const Footer = () => {
       </h3>
     </footer>
   );
-};
+}
